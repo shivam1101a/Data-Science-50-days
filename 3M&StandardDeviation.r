@@ -8,6 +8,7 @@
  
  #Mode function
  Mode <- function(x){
+   print(x)
    ux <- unique(x)
    ux[which.max(tabulate(match(x,ux)))]
  }
@@ -16,5 +17,5 @@
  cat("Mode = {}", result)
 
  #Standard deviation
- variable=var(data)
+ variance=var(data)
  standardDeviation=sqrt(var(data))
