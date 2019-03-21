@@ -1,0 +1,11 @@
+data <- read.csv(file = "E:/R-practice/Diabetes.csv",head=TRUE,sep =",")
+na.omit(data)
+library(caTools)
+split<-sample.split(data$Outcome,SplitRatio = 0.8)
+split
+train<-subset(data,split==T)
+test<-subset(data,split==F)
+View(train)
+View(test)
+mod1<-glm(Outcome~. ,train,family = "binomial")
+summary(mod1)
